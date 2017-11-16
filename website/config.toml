@@ -1,0 +1,4 @@
+baseURL = "https://robertmao.com/"
+languageCode = "en-us"
+title = "Robert Mao"
+theme = "ananke"
