@@ -5,3 +5,5 @@ draft: false
 ---
 
 Welcome to My Personal Website powered by Hugo and now as a Blocklet run on ABT Node!
+
+New message from 2020! Finally!
