@@ -13,3 +13,5 @@ fields:
   config:
     required: false
   label: content
+pages:
+- website/content/Just a test/hello.md
