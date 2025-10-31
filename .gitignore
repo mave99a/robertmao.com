@@ -1,4 +1,17 @@
+# OS files
 .DS_Store
-node_modules/
-website/public
-/npm-debug.log
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+.cache/
