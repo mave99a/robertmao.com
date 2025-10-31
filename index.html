@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Mao - Links</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile h1 {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .profile p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-item {
+            background: white;
+            padding: 18px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .link-item:nth-child(1) { animation-delay: 0.1s; }
+        .link-item:nth-child(2) { animation-delay: 0.2s; }
+        .link-item:nth-child(3) { animation-delay: 0.3s; }
+        .link-item:nth-child(4) { animation-delay: 0.4s; }
+        .link-item:nth-child(5) { animation-delay: 0.5s; }
+        .link-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .link-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .link-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile h1 {
+                font-size: 24px;
+            }
+
+            .link-item {
+                padding: 16px 20px;
+                font-size: 15px;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="https://via.placeholder.com/120" alt="Profile Photo" class="profile-image" id="profileImage">
+            <h1 id="profileName">Robert Mao</h1>
+            <p id="profileBio">Welcome to my link hub! Connect with me across the web.</p>
+        </div>
+
+        <div class="links" id="linksContainer">
+            <!-- Links will be dynamically generated -->
+        </div>
+
+        <div class="footer">
+            <p>Made with ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        // Configuration - Edit these to customize your links
+        const config = {
+            name: "Robert Mao",
+            bio: "Welcome to my link hub! Connect with me across the web.",
+            profileImage: "https://via.placeholder.com/120", // Replace with your image URL
+            links: [
+                {
+                    title: "Website",
+                    url: "https://robertmao.com",
+                    icon: "🌐"
+                },
+                {
+                    title: "GitHub",
+                    url: "https://github.com/yourusername",
+                    icon: "💻"
+                },
+                {
+                    title: "LinkedIn",
+                    url: "https://linkedin.com/in/yourusername",
+                    icon: "💼"
+                },
+                {
+                    title: "Twitter",
+                    url: "https://twitter.com/yourusername",
+                    icon: "🐦"
+                },
+                {
+                    title: "Email Me",
+                    url: "mailto:your.email@example.com",
+                    icon: "📧"
+                },
+                {
+                    title: "Blog",
+                    url: "https://yourblog.com",
+                    icon: "📝"
+                }
+            ]
+        };
+
+        // Update profile information
+        document.getElementById('profileName').textContent = config.name;
+        document.getElementById('profileBio').textContent = config.bio;
+        document.getElementById('profileImage').src = config.profileImage;
+
+        // Generate links
+        const linksContainer = document.getElementById('linksContainer');
+        config.links.forEach(link => {
+            const linkElement = document.createElement('a');
+            linkElement.href = link.url;
+            linkElement.className = 'link-item';
+            linkElement.target = '_blank';
+            linkElement.rel = 'noopener noreferrer';
+
+            linkElement.innerHTML = `
+                <span class="link-icon">${link.icon}</span>
+                <span>${link.title}</span>
+            `;
+
+            linksContainer.appendChild(linkElement);
+        });
+    </script>
+</body>
+</html>
